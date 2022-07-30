@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&family=Manrope:wght@800&family=Poppins:wght@400;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-	:root {
-		--cyan: 193 38% 86%;
-		--green: 150 100% 66%;
-		--grayish-blue: 217 19% 38%;
-		--dark-blue: 218 23% 16%;
-	}
+  :root {
+    --cyan: 193 38% 86%;
+    --green: 150 100% 66%;
+    --grayish-blue: 217 19% 38%;
+    --dark-blue: 218 23% 16%;
+  }
 }

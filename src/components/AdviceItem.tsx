@@ -1,16 +1,23 @@
-import React from "react";
+import React from 'react';
+import mobileDivider from '../assets/images/pattern-divider-mobile.svg';
 
 interface AdviceProps {
-	id: string;
-	advice: string;
+  id: string;
+  advice: string;
 }
 
 const AdviceItem: React.FC<AdviceProps> = ({ id, advice }) => {
-	return (
-		<div key={id} className="bg-darkBlue">
-			<h1 className=" text-cyan ">{advice}</h1>
-		</div>
-	);
+  return (
+    <div key={id} className="bg-grayishBlue rounded-lg py-6">
+      <p className="text-green text-center font-bold uppercase py-10 tracking-widest text-sm">
+        Advice #117
+      </p>
+      <h1 className="text-cyan text-[1.75rem] text-center">"{advice}"</h1>
+      <div className="border">
+        <img src={mobileDivider} alt="" className="max-w-full mx-auto block" />
+      </div>
+    </div>
+  );
 };
 
 export default AdviceItem;

@@ -1,25 +1,31 @@
-import { useEffect, useState } from "react";
-import AdviceItem from "./components/AdviceItem";
-import { Advice } from "./types/advice";
+import { useEffect, useState } from 'react';
+import AdviceItem from './components/AdviceItem';
+import { Advice } from './types/advice';
 
 const App = () => {
-	const [advice, setAdvice] = useState<Advice[]>([]);
+  const [advice, setAdvice] = useState<Advice[]>([]);
 
-	useEffect(() => {
-		fetch("https://api.adviceslip.com/advice")
-			.then((response) => response.json())
-			.then((data) => {
-				setAdvice([data]);
-			});
-	}, []);
+  const fetchAndSetAdvice = (url: string) => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        setAdvice([data]);
+      });
+  };
 
-	return (
-		<main>
-			{advice.map(({ slip }) => (
-				<AdviceItem {...slip} />
-			))}
-		</main>
-	);
+  useEffect(() => {
+    fetchAndSetAdvice('https://api.adviceslip.com/advice');
+  }, [advice]);
+
+  return (
+    <main className="grid items-center font-Manrope font-extrabold h-screen mx-auto bg-darkBlue px-4">
+      <div className="container max-w-[34rem] mx-auto">
+        {advice.map(({ slip }) => (
+          <AdviceItem key={slip.id} {...slip} />
+        ))}
+      </div>
+    </main>
+  );
 };
 
 export default App;
