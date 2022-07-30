@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	:root {
+		--cyan: 193 38% 86%;
+		--green: 150 100% 66%;
+		--grayish-blue: 217 19% 38%;
+		--dark-blue: 218 23% 16%;
+	}
+}
