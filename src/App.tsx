@@ -4,16 +4,17 @@ import { Advice } from './types/advice';
 import { fetchAdvice } from './utils/utils';
 
 const App = () => {
-  const { data, isLoading, isError, error } = useQuery<Advice, Error>(
-    ['advice'],
-    fetchAdvice
-  );
+  const { isLoading, isError, data, error } =
+    useQuery<Advice, Error>(
+      ['advice'],
+      fetchAdvice
+    );
 
   return (
     <main className="grid items-center font-Manrope font-extrabold h-screen mx-auto bg-darkBlue px-4">
       {isLoading && <p>Loading...</p>}
       {isError && <p>{error.message}</p>}
-      {data && <AdviceItem {...data?.slip} />}
+      {data && <AdviceItem {...data.slip} />}
     </main>
   );
 };
