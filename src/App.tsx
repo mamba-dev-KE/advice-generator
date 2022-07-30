@@ -1,29 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import AdviceItem from './components/AdviceItem';
 import { Advice } from './types/advice';
+import { fetchAdvice } from './utils/utils';
 
 const App = () => {
-  const [advice, setAdvice] = useState<Advice[]>([]);
-
-  const fetchAndSetAdvice = (url: string) => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        setAdvice([data]);
-      });
-  };
-
-  useEffect(() => {
-    fetchAndSetAdvice('https://api.adviceslip.com/advice');
-  }, [advice]);
+  const { data, isLoading, isError, error } = useQuery<Advice, Error>(
+    ['advice'],
+    fetchAdvice
+  );
 
   return (
     <main className="grid items-center font-Manrope font-extrabold h-screen mx-auto bg-darkBlue px-4">
-      <div className="container max-w-[34rem] mx-auto">
-        {advice.map(({ slip }) => (
-          <AdviceItem key={slip.id} {...slip} />
-        ))}
-      </div>
+      {isLoading && <p>Loading...</p>}
+      {isError && <p>{error.message}</p>}
+      {data && <AdviceItem {...data?.slip} />}
     </main>
   );
 };
