@@ -2,7 +2,6 @@ import { useQuery } from '@tanstack/react-query';
 import {
   AnimatePresence,
   motion,
-  Variants,
 } from 'framer-motion';
 import AdviceItem from './components/AdviceItem';
 import { Advice } from './types/advice';
@@ -46,8 +45,8 @@ const App = () => {
             {error.message}
           </motion.p>
         )}
+        {data && <AdviceItem {...data.slip} />}
       </AnimatePresence>
-      {data && <AdviceItem {...data.slip} />}
     </motion.main>
   );
 };
