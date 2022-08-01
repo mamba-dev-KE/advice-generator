@@ -20,6 +20,9 @@ module.exports = {
       fontFamily: {
         Manrope: ['Manrope', 'sans-serif'],
       },
+      dropShadow: {
+        dice: '0 0 1rem hsla(150 100% 66% / 0.8)',
+      },
     },
   },
   plugins: [],

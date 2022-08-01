@@ -18,13 +18,13 @@ const AdviceItem: React.FC<AdviceProps> = ({
 
   return (
     <motion.div
-      initial={{ y: '10vh', opacity: 0 }}
+      initial={{ y: 20, opacity: 0 }}
       animate={{
         y: 0,
         opacity: 1,
         transition: {
           duration: 0.5,
-          delay: 0.25,
+          delay: 0.05,
           ease: 'easeInOut',
         },
       }}
@@ -48,9 +48,9 @@ const AdviceItem: React.FC<AdviceProps> = ({
           className="max-w-full mx-auto block"
         />
       </div>
-      <div className="w-16 aspect-square rounded-full bg-green grid items-center justify-center relative left-1/2 top-8 transform translate-x-[-50%] cursor-pointer">
-        <img src={iconDice} alt="" className="" />
-      </div>
+      <motion.div className="w-16 aspect-square rounded-full bg-green grid items-center justify-center relative left-1/2 top-8 transform translate-x-[-50%] cursor-pointer hover:drop-shadow-dice hover:scale-125 transition">
+        <img src={iconDice} alt="" />
+      </motion.div>
     </motion.div>
   );
 };

@@ -25,9 +25,9 @@ const App = () => {
         {isLoading && (
           <motion.p
             key="loading"
-            initial={{ x: 200, opacity: 0.2 }}
+            initial={{ x: 100, opacity: 0.2 }}
             animate={{ x: 0, opacity: 1 }}
-            exit={{ x: -200, opacity: 0 }}
+            exit={{ x: -100, opacity: 0 }}
             className="text-2xl text-green text-center"
           >
             Loading...
@@ -37,9 +37,9 @@ const App = () => {
         {isError && (
           <motion.p
             key="error"
-            initial={{ x: 200, opacity: 0.2 }}
+            initial={{ x: 100, opacity: 0.2 }}
             animate={{ x: 0, opacity: 1 }}
-            exit={{ x: -200, opacity: 0 }}
+            exit={{ x: -100, opacity: 0 }}
             className="text-2xl text-red-300 text-center"
           >
             {error.message}
