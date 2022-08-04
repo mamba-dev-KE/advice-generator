@@ -7,11 +7,13 @@ import iconDice from '../assets/images/icon-dice.svg';
 interface AdviceProps {
   id: string;
   advice: string;
+  refetch?: () => void;
 }
 
 const AdviceItem: React.FC<AdviceProps> = ({
   id,
   advice,
+  refetch,
 }) => {
   const size = useWindowSize();
   const isMobile = size.width < 500;
@@ -48,7 +50,10 @@ const AdviceItem: React.FC<AdviceProps> = ({
           className="max-w-full mx-auto block"
         />
       </div>
-      <motion.div className="w-16 aspect-square rounded-full bg-green grid items-center justify-center relative left-1/2 top-8 transform translate-x-[-50%] cursor-pointer hover:drop-shadow-dice hover:scale-125 transition">
+      <motion.div
+        className="w-16 aspect-square rounded-full bg-green grid items-center justify-center relative left-1/2 top-8 transform translate-x-[-50%] cursor-pointer hover:drop-shadow-dice hover:scale-125 active:scale-105 transition"
+        onClick={refetch}
+      >
         <img src={iconDice} alt="" />
       </motion.div>
     </motion.div>

@@ -8,11 +8,19 @@ import { Advice } from './types/advice';
 import { fetchAdvice } from './utils/utils';
 
 const App = () => {
-  const { isLoading, isError, data, error } =
-    useQuery<Advice, Error>(
-      ['advice'],
-      fetchAdvice
-    );
+  const {
+    isLoading,
+    isError,
+    data: advice,
+    refetch,
+    error,
+  } = useQuery<Advice, Error>(
+    ['advice'],
+    fetchAdvice,
+    {
+      refetchOnWindowFocus: false,
+    }
+  );
 
   return (
     <motion.main
@@ -45,7 +53,12 @@ const App = () => {
             {error.message}
           </motion.p>
         )}
-        {data && <AdviceItem {...data.slip} />}
+        {advice && (
+          <AdviceItem
+            {...advice.slip}
+            refetch={refetch}
+          />
+        )}
       </AnimatePresence>
     </motion.main>
   );
