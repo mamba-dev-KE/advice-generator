@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import mobileDivider from '../assets/images/pattern-divider-mobile.svg';
 import desktopDivider from '../assets/images/pattern-divider-desktop.svg';
 import iconDice from '../assets/images/icon-dice.svg';
-
 interface AdviceProps {
   id: string;
   advice: string;
@@ -20,8 +19,9 @@ const AdviceItem: React.FC<AdviceProps> = ({
 
   return (
     <motion.div
-      initial={{ y: 20, opacity: 0 }}
+      initial={{ scale: 0, y: 20, opacity: 0 }}
       animate={{
+        scale: 1,
         y: 0,
         opacity: 1,
         transition: {
@@ -30,7 +30,6 @@ const AdviceItem: React.FC<AdviceProps> = ({
           ease: 'easeInOut',
         },
       }}
-      exit={{ y: -20, opacity: 0 }}
       className="bg-darkGrayishBlue rounded-lg pt-6 px-8 max-w-[34rem] mx-auto"
     >
       <p className="text-green text-center font-bold uppercase py-5 tracking-widest text-sm">

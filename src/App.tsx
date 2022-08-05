@@ -27,7 +27,7 @@ const App = () => {
       initial="hidden"
       animate="visible"
       exit="exit"
-      className="grid items-center font-Manrope font-extrabold h-screen mx-auto bg-darkBlue px-4"
+      className="grid items-center font-Manrope font-extrabold h-screen mx-auto bg-darkBlue px-4 overflow-x-hidden"
     >
       <AnimatePresence exitBeforeEnter>
         {isLoading && (
