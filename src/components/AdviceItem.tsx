@@ -30,12 +30,12 @@ const AdviceItem: React.FC<AdviceProps> = ({
           ease: 'easeInOut',
         },
       }}
-      className="bg-darkGrayishBlue rounded-lg pt-6 px-8 max-w-[34rem] mx-auto"
+      className="bg-darkGrayishBlue rounded-xl pt-6 px-8 max-w-[34rem] mx-auto"
     >
       <p className="text-green text-center font-bold uppercase py-5 tracking-widest text-sm">
         Advice #{id}
       </p>
-      <h1 className="text-cyan text-[1.75rem] text-center">
+      <h1 className="text-cyan md:text-[1.75rem] text-center">
         "{advice}"
       </h1>
       <div className="mt-6">
