@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Built with
 
-- React 
+- React
 - Tailwindcss
 - Framer Motion
 
