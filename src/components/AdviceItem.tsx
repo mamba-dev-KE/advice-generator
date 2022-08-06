@@ -50,10 +50,14 @@ const AdviceItem: React.FC<AdviceProps> = ({
         />
       </div>
       <motion.div
-        className="w-16 aspect-square rounded-full bg-green grid items-center justify-center relative left-1/2 top-8 transform translate-x-[-50%] cursor-pointer active:scale-[0.95] hover:drop-shadow-dice scale-125  transition"
+        className="w-12 aspect-square rounded-full bg-green grid items-center justify-center relative left-1/2 top-8 transform translate-x-[-50%] cursor-pointer active:scale-[0.95] hover:drop-shadow-dice scale-125  transition"
         onClick={refetch}
       >
-        <img src={iconDice} alt="" />
+        <img
+          src={iconDice}
+          alt=""
+          className="w-5"
+        />
       </motion.div>
     </motion.div>
   );
